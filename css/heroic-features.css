@@ -168,11 +168,34 @@ body{
   grid-area: footer;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+  .container-cuadros{
+    padding-top: 1em;
+  }
+  .container-cuadros{
+    grid-template-columns: repeat(auto-fill, 350px);
+  }
+  .level-1{
+    /*
+    Se dice donde acaba la fila pero no donde empieza y por eso el contenido se ajusta  de acuerdo con el tamaño del item
+    */
+    grid-row-end: span 4;
+  }
+  .level-2{
+    grid-row-end: span 2;
+  }
+  .level-3{
+    grid-row-end: span 1;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .header{
     display: block;
     padding: 2px;
     height: auto;
+    position: fixed;
+    width: 100%;
   }
   .header .logo{
     text-align: right;
@@ -194,6 +217,9 @@ body{
     display: inline;
     padding: 1em;
   }
+  .container-cuadros{
+    padding-top: 4em;
+  }
   .menu{
     position: fixed;
     background-color: #449fdbbf;
@@ -213,21 +239,10 @@ body{
   .menu.is-active{
     left: 0;
   }
-  .header{
-    position: fixed;
-    width: 100%;
-  }
-  .container-cuadros{
-    padding-top: 4em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-/*  .container-cuadros {
-    margin: 2em 0 2em 1em;
-  }*/
 }
 
 @media screen and (max-width: 320px) {
-
+  .container-cuadros{
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
 }
