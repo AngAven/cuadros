@@ -7,6 +7,8 @@
 :root {
   --base-green: #40a798;
   --white: #ffffff;
+  --subtittle-size: 16px;
+  --normal-text: 14px;
 }
 
 @font-face {
@@ -113,13 +115,11 @@ figure {
   height: inherit;
   padding: 0 10px;
 }
-/*.header .logo{
-  display: none;
-}*/
 
 body{
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: var(--normal-text);
   grid-template-areas:
         "header"
         "main-container"
@@ -156,7 +156,20 @@ body{
 .level-3{
   grid-row-end: span 1;
 }
+.details{
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 100px 100px 100px;
+  color: #79a3b1;
+  margin-top: 2px;
+}
+h4{
+  font-size: var(--subtittle-size);
+}
+.details li{
+  text-align: center;
 
+}
 .footer {
   display: flex;
   color: white;
