@@ -134,8 +134,10 @@ body{
   /*
       El uso de auto-fill nos ayuda a no poner por defecto el número de columnas que usará el navegador y con repeat se ajusta el numero de items por columnas dependiendo del ancho que tenga la pantalla
   */
-  grid-template-columns: repeat(auto-fill, 300px);
-}
+  grid-template-columns: repeat(auto-fill, 400px);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  }
 .item{
   border-radius: 5px;
   padding: 10px;
@@ -148,10 +150,10 @@ body{
   /*
   Se dice donde acaba la fila pero no donde empieza y por eso el contenido se ajusta  de acuerdo con el tamaño del item
   */
-  grid-row-end: span 4;
+  grid-row-end: span 2;
 }
 .level-2{
-  grid-row-end: span 2;
+  grid-row-end: span 1;
 }
 .level-3{
   grid-row-end: span 1;
@@ -180,18 +182,29 @@ h4{
   justify-content: center;
   grid-area: footer;
 }
+@media screen and (max-width: 1024px) {
+  .container-cuadros {
+    grid-template-columns: repeat(auto-fill, 300px);
+  }
+  .level-1{
+    grid-row-end: span 4;
+  }
+  .level-2{
+    grid-row-end: span 2;
+  }
+  .level-3{
+    grid-row-end: span 1;
+  }
+}
 
 @media screen and (max-width: 768px) {
   .container-cuadros{
     padding-top: 1em;
   }
   .container-cuadros{
-    grid-template-columns: repeat(auto-fill, 350px);
+    grid-template-columns: repeat(auto-fill, 300px);
   }
   .level-1{
-    /*
-    Se dice donde acaba la fila pero no donde empieza y por eso el contenido se ajusta  de acuerdo con el tamaño del item
-    */
     grid-row-end: span 4;
   }
   .level-2{
@@ -231,7 +244,8 @@ h4{
     padding: 1em;
   }
   .container-cuadros{
-    padding-top: 4em;
+    padding-top: 5em;
+    padding-bottom: 2em;
   }
   .menu{
     position: fixed;
